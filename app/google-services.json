@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "731266760889",
+    "project_id": "logisticapp0802",
+    "storage_bucket": "logisticapp0802.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731266760889:android:7a41e35f4a4bab6905db68",
+        "android_client_info": {
+          "package_name": "com.example.logisticapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "731266760889-rbqomef6f83b0i30p35fmicavspgbn89.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADfsrHl2l6SW4JZZF55Z_7WSjc7u8EAf8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "731266760889-rbqomef6f83b0i30p35fmicavspgbn89.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

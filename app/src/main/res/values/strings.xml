@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">LogisticApp</string>
+    <string name="logistic_app">Logistic App</string>
+    <string name="registrarme">REGISTRARME</string>
+    <string name="preferencia">¿Que tipo de usuario quieres ser?</string>
+    <string name="registro_logistico">Registro Logistico</string>
+    <string name="centro_logistico">Centro Logistico</string>
 </resources>
