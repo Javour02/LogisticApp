@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".tipo_oferta">
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="178dp"
+        android:layout_height="34dp"
+        android:layout_marginBottom="556dp"
+        android:text="¿Cuál de los siguientes espacios desea ofertar?"
+        android:textColor="#020202"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.845"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button4"
+        app:layout_constraintVertical_bias="0.504" />
+
+    <Button
+        android:id="@+id/button19"
+        android:layout_width="262dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="240dp"
+        android:backgroundTint="#016A87"
+        android:text="Contenedores"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button16"
+        app:layout_constraintVertical_bias="0.904" />
+
+    <Button
+        android:id="@+id/button21"
+        android:layout_width="262dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#016A87"
+        android:text="Otro"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.463"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button20"
+        app:layout_constraintVertical_bias="0.314" />
+
+    <Button
+        android:id="@+id/button15"
+        android:layout_width="262dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="184dp"
+        android:backgroundTint="#016A87"
+        android:text="Maquinaria"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.463"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button19"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button20"
+        android:layout_width="262dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="112dp"
+        android:backgroundTint="#016A87"
+        android:text="Instaladores"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button15"
+        app:layout_constraintVertical_bias="0.724" />
+
+    <Button
+        android:id="@+id/button18"
+        android:layout_width="262dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="424dp"
+        android:backgroundTint="#016A87"
+        android:text="Transporte"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button16"
+        android:layout_width="262dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="304dp"
+        android:backgroundTint="#016A87"
+        android:text="Eventos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button17"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button17"
+        android:layout_width="262dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="368dp"
+        android:backgroundTint="#016A87"
+        android:text="Almacenamiento"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button18"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="312dp"
+        android:layout_height="557dp"
+        app:srcCompat="@drawable/log"
+        tools:layout_editor_absoluteX="-46dp"
+        tools:layout_editor_absoluteY="-111dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
