@@ -26,14 +26,15 @@
         android:id="@+id/button6"
         android:layout_width="148dp"
         android:layout_height="52dp"
-        android:layout_marginTop="704dp"
         android:backgroundTint="#016A87"
         android:onClick="registrarse"
         android:text="registrarse"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.934"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.961" />
 
     <ImageView
         android:id="@+id/imageView2"
