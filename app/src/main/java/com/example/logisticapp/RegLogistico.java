@@ -11,8 +11,13 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -25,10 +30,12 @@ public class RegLogistico extends AppCompatActivity {
 
     private EditText nombre, contraseña, contraseña2, telefono, desc, correo, ubicacion, eNombre;
     private Switch terminos;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mAuth = FirebaseAuth.getInstance();
         setContentView(R.layout.reg_logistico);
         nombre = findViewById(R.id.nombre);
         contraseña = findViewById(R.id.password);
@@ -70,23 +77,44 @@ public class RegLogistico extends AppCompatActivity {
             user.put("cName", enc);
             user.put("desc", des);
 
+            mAuth.createUserWithEmailAndPassword(cor, con).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        // Sign in success, update UI with the signed-in user's information
+                        FirebaseUser usuario = mAuth.getCurrentUser();
+                        user.put("id", usuario.toString());
+                        agregarAColeccion(user, view);
+                    } else {
+                        if (con.length() < 7) {
+                            Toast.makeText(view.getContext(), "La contraseña debe ser mas larga", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(view.getContext(), "No se pudo autenticar a el usuario", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
+            });
 
-            db.collection("ULogistico")
-                .add(user)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Intent i = new Intent(view.getContext(), Login.class);
-                        startActivity(i);
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(view.getContext(), "No se pudo registrar el usuario", Toast.LENGTH_SHORT).show();
-                    }
-                });
+
         }
+    }
+
+    private void agregarAColeccion(Map<String, Object> user, View view){
+        db.collection("ULogistico")
+            .add(user)
+            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                @Override
+                public void onSuccess(DocumentReference documentReference) {
+                    Intent i = new Intent(view.getContext(), Login.class);
+                    startActivity(i);
+                }
+            })
+            .addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(view.getContext(), "No se pudo registrar el usuario", Toast.LENGTH_SHORT).show();
+                }
+            });
     }
 
     private boolean validarEmail(String email) {
