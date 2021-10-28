@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LogisticApp">
         <activity
+            android:name=".VerOfertas"
+            android:exported="false" />
+        <activity
+            android:name=".Ofertar"
+            android:exported="false" />
+        <activity
+            android:name=".LogisticMenu"
+            android:exported="false" />
+        <activity
             android:name=".Menu"
             android:exported="false" />
         <activity
