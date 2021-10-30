@@ -26,6 +26,7 @@ public class BuscarActivos extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private TextView parrafo;
     private String tipo;
+    public static final String EMAIL = "email";
     private FirebaseAuth mAuth;
     private LinearLayout cont;
     public static final String TIPO = "tipo";
@@ -66,7 +67,7 @@ public class BuscarActivos extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         if(document.get("id").toString().equals(mAuth.getCurrentUser().toString())){
-                            seguirLeyendo(document);
+                            seguirLeyendo(document, document.get("email").toString());
                         }
                     }
                 } else {
@@ -76,14 +77,14 @@ public class BuscarActivos extends AppCompatActivity {
         });
     }
 
-    private void seguirLeyendo(QueryDocumentSnapshot doc){
+    private void seguirLeyendo(QueryDocumentSnapshot doc, String email){
         db.collection("ULogistico").document(doc.getId()).collection("Activos").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         if(document.get("Tipo").toString().equals(tipo)){
-                            agregarActivo(document.get("activo").toString(), document);
+                            agregarActivo(document.get("activo").toString(), document, email);
                         }
                     }
                 } else {
@@ -93,7 +94,7 @@ public class BuscarActivos extends AppCompatActivity {
         });
     }
 
-    private void agregarActivo(String numActivo, QueryDocumentSnapshot document){
+    private void agregarActivo(String numActivo, QueryDocumentSnapshot document, String email){
         LinearLayout elemento = new LinearLayout(this);
         elemento.setOrientation(LinearLayout.HORIZONTAL);
         Button boton = new Button(BuscarActivos.this);
@@ -103,8 +104,9 @@ public class BuscarActivos extends AppCompatActivity {
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(BuscarActivos.this, OfertarActivo.class);
+                Intent intent = new Intent(BuscarActivos.this, ConfirmarActivo.class);
                 intent.putExtra(TIPO, tipo);
+                intent.putExtra(EMAIL, email);
                 pasarInfo(intent, document);
                 startActivity(intent);
             }
@@ -135,7 +137,7 @@ public class BuscarActivos extends AppCompatActivity {
         }else{
             i.putExtra(PROD, doc.get("prod").toString());
             i.putExtra(UBI, doc.get("ubi").toString());
-            i.putExtra(CARAC, doc.get("res").toString());
+            i.putExtra(CARAC, doc.get("carac").toString());
         }
     }
 }

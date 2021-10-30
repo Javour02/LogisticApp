@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LogisticApp">
         <activity
+            android:name=".ConfirmarActivo"
+            android:exported="false" />
+        <activity
             android:name=".plantilla_general"
             android:exported="false" />
         <activity
@@ -58,5 +61,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

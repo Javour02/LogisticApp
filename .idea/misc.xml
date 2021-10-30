@@ -20,8 +20,20 @@
         <entry key="..\:/Users/Asus/Documents/LogisticApp/app/src/main/res/layout/registro.xml" value="0.22" />
         <entry key="..\:/Users/Javier Garavito/Documents/ProyectAndroid/LogisticApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/Javier Garavito/Documents/ProyectAndroid/LogisticApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/Javier Garavito/Documents/ProyectAndroid/LogisticApp/app/src/main/res/layout/activity_activos.xml" value="0.264" />
+        <entry key="..\:/Users/Javier Garavito/Documents/ProyectAndroid/LogisticApp/app/src/main/res/layout/activity_buscar_activos.xml" value="0.25" />
+        <entry key="..\:/Users/Javier Garavito/Documents/ProyectAndroid/LogisticApp/app/src/main/res/layout/activity_confirmar_activo.xml" value="0.2359375" />
+        <entry key="..\:/Users/Javier Garavito/Documents/ProyectAndroid/LogisticApp/app/src/main/res/layout/activity_logistic_menu.xml" value="0.25" />
+        <entry key="..\:/Users/Javier Garavito/Documents/ProyectAndroid/LogisticApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Javier Garavito/Documents/ProyectAndroid/LogisticApp/app/src/main/res/layout/activity_menu.xml" value="0.264" />
+        <entry key="..\:/Users/Javier Garavito/Documents/ProyectAndroid/LogisticApp/app/src/main/res/layout/activity_ofertar.xml" value="0.25" />
+        <entry key="..\:/Users/Javier Garavito/Documents/ProyectAndroid/LogisticApp/app/src/main/res/layout/activity_ofertar_activo.xml" value="0.25" />
+        <entry key="..\:/Users/Javier Garavito/Documents/ProyectAndroid/LogisticApp/app/src/main/res/layout/activity_tipo_oferta.xml" value="0.4" />
+        <entry key="..\:/Users/Javier Garavito/Documents/ProyectAndroid/LogisticApp/app/src/main/res/layout/activity_ver_ofertas.xml" value="0.536" />
+=======
         <entry key="..\:/Users/Javier Garavito/Documents/ProyectAndroid/LogisticApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Javier Garavito/Documents/ProyectAndroid/LogisticApp/app/src/main/res/layout/activity_menu.xml" value="0.25" />
+>>>>>>> 1890631e6adba49064d4c51fd04638bec3a74211
         <entry key="..\:/Users/Javier Garavito/Documents/ProyectAndroid/LogisticApp/app/src/main/res/layout/inicio.xml" value="0.25" />
         <entry key="..\:/Users/Javier Garavito/Documents/ProyectAndroid/LogisticApp/app/src/main/res/layout/login.xml" value="0.176" />
         <entry key="..\:/Users/Javier Garavito/Documents/ProyectAndroid/LogisticApp/app/src/main/res/layout/main_activity.xml" value="0.536" />
