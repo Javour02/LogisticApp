@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondoinicio"
+    tools:context=".ultimas_ofertas">
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="153dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#016A87"
+        android:text="Cerrar sesión"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="#016A87"
+        android:fontFamily="sans-serif-medium"
+        android:text="Bienvenido"
+        android:textColor="#016A87"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="378dp"
+        android:layout_height="129dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="205dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="140dp"
+            android:layout_height="133dp"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <LinearLayout
+            android:layout_width="232dp"
+            android:layout_height="134dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="203dp"
+                android:layout_height="45dp"
+                android:text="@string/centro_logistico"
+                android:textColor="#000000"
+                android:textSize="16" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="203dp"
+                android:layout_height="83dp"
+                android:text="Descripción detallada de el servicio y/o producto logístico"
+                android:textColor="#000000"
+                android:textSize="16" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <SearchView
+        android:layout_width="326dp"
+        android:layout_height="47dp"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="96dp" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="372dp"
+        android:layout_height="31dp"
+        android:text="Últimas ofertas"
+        android:textColor="#403C3C"
+        android:textSize="16"
+        tools:layout_editor_absoluteX="18dp"
+        tools:layout_editor_absoluteY="156dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

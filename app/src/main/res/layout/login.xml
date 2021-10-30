@@ -12,7 +12,7 @@
 
         android:layout_width="149dp"
         android:layout_height="35dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="28dp"
         android:autoSizeTextType="uniform"
         android:text="¿Aún no tienes una cuenta?"
         android:textAlignment="textEnd"
@@ -20,44 +20,44 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button4"
-        app:layout_constraintVertical_bias="0.493" />
+        app:layout_constraintVertical_bias="0.518" />
 
     <Button
         android:id="@+id/button6"
         android:layout_width="148dp"
         android:layout_height="52dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="72dp"
+        android:layout_marginBottom="84dp"
         android:backgroundTint="#016A87"
         android:onClick="irRegistro"
         android:text="registrarse"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toEndOf="@+id/textView12" />
 
     <ImageView
         android:id="@+id/fotoCamion"
-        android:layout_width="340dp"
+        android:layout_width="336dp"
         android:layout_height="356dp"
         android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.014"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.827"
         app:srcCompat="@drawable/log" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="56dp"
-        android:layout_marginTop="264dp"
+        android:layout_marginTop="236dp"
         android:fontFamily="sans-serif-medium"
         android:text="Bienvenido"
         android:textColor="#040404"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.259"
+        app:layout_constraintHorizontal_bias="0.263"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -65,11 +65,12 @@
         android:id="@+id/button4"
         android:layout_width="155dp"
         android:layout_height="50dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="#016A87"
         android:onClick="loggearse"
         android:text="Loggy"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.294"
+        app:layout_constraintHorizontal_bias="0.296"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/conLog" />
 
@@ -77,13 +78,13 @@
         android:id="@+id/usuarioLog"
         android:layout_width="278dp"
         android:layout_height="59dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textWebEmailAddress|textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.573"
+        app:layout_constraintHorizontal_bias="0.578"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
