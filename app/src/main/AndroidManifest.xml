@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LogisticApp">
         <activity
+            android:name=".ConfirmarActivo"
+            android:exported="false" />
+        <activity
             android:name=".OfertarActivo"
             android:exported="false" />
         <activity
