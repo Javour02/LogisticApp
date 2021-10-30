@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/FONDO2"
     tools:context=".LogisticMenu">
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="193dp"
         android:layout_height="172dp"
-        app:srcCompat="@drawable/imagen"
-        tools:layout_editor_absoluteX="109dp"
-        tools:layout_editor_absoluteY="230dp" />
+        app:layout_constraintBottom_toTopOf="@+id/button6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        app:srcCompat="@drawable/imagen" />
 
     <Button
         android:id="@+id/button8"
@@ -30,28 +31,26 @@
     <Button
         android:id="@+id/button6"
         android:layout_width="243dp"
-        android:layout_height="46dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
         android:backgroundTint="#016A87"
         android:onClick="ofertar"
         android:text="ofertar espacio"
         app:layout_constraintBottom_toTopOf="@+id/button7"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12"
-        app:layout_constraintVertical_bias="0.947" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView12"
         android:layout_width="229dp"
         android:layout_height="63dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="116dp"
         android:fontFamily="sans-serif-smallcaps"
         android:text="Menu logístico"
         android:textColor="@color/black"
-        android:textSize="24sp"
+        android:textSize="30sp"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.554"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,13 +58,13 @@
         android:id="@+id/button7"
         android:layout_width="251dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="12dp"
         android:backgroundTint="#016A87"
         android:onClick="verOfertas"
         android:text="ver quien a ofertado"
         app:layout_constraintBottom_toTopOf="@+id/button8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.543"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

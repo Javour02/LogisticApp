@@ -31,6 +31,13 @@ public class RegLogistico extends AppCompatActivity {
     private EditText nombre, contraseña, contraseña2, telefono, desc, correo, ubicacion, eNombre;
     private Switch terminos;
     private FirebaseAuth mAuth;
+    public static final String NOM = "nombre";
+    public static final String CON = "contraseña";
+    public static final String TEL = "Telefono";
+    public static final String COR = "Correo";
+    public static final String ENC = "Encargado";
+    public static final String UBI = "Ubicacion";
+    public static final String DES = "Descripcion";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,23 +74,22 @@ public class RegLogistico extends AppCompatActivity {
         }else if(!terminos.isChecked()){
             Toast.makeText(this, "Debe aceptar los terminos y condiciones para continuar", Toast.LENGTH_SHORT).show();
         }else {
-
-            Map<String, Object> user = new HashMap<>();
-            user.put("center", nom);
-            user.put("phone", tel);
-            user.put("email", cor);
-            user.put("password", con);
-            user.put("UPlantaPrincipal", ubi);
-            user.put("cName", enc);
-            user.put("desc", des);
-
             mAuth.createUserWithEmailAndPassword(cor, con).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
                         // Sign in success, update UI with the signed-in user's information
-                        FirebaseUser usuario = mAuth.getCurrentUser();
-                        user.put("id", usuario.toString());
+                        Map<String, Object> user = new HashMap<>();
+                        user.put("id",mAuth.getCurrentUser().toString());
+                        user.put("center", nom);
+                        user.put("phone", tel);
+                        user.put("email", cor);
+                        user.put("password", con);
+                        user.put("UPlantaPrincipal", ubi);
+                        user.put("cName", enc);
+                        user.put("desc", des);
+                        user.put("numActivos", 0);
+
                         agregarAColeccion(user, view);
                     } else {
                         if (con.length() < 7) {
@@ -99,22 +105,14 @@ public class RegLogistico extends AppCompatActivity {
         }
     }
 
-    private void agregarAColeccion(Map<String, Object> user, View view){
-        db.collection("ULogistico")
-            .add(user)
-            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                @Override
-                public void onSuccess(DocumentReference documentReference) {
-                    Intent i = new Intent(view.getContext(), Login.class);
-                    startActivity(i);
-                }
-            })
-            .addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(view.getContext(), "No se pudo registrar el usuario", Toast.LENGTH_SHORT).show();
-                }
-            });
+    private void agregarAColeccion(Map<String, Object> oli, View view){
+        db.collection("ULogistico").add(oli).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            @Override
+            public void onSuccess(DocumentReference documentReference) {
+                Intent i = new Intent(view.getContext(), Activos.class);
+                startActivity(i);
+            }
+        });
     }
 
     private boolean validarEmail(String email) {
