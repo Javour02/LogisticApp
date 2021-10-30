@@ -121,7 +121,7 @@
         android:layout_width="312dp"
         android:layout_height="557dp"
         app:srcCompat="@drawable/log"
-        tools:layout_editor_absoluteX="-46dp"
+        tools:layout_editor_absoluteX="-41dp"
         tools:layout_editor_absoluteY="-111dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
