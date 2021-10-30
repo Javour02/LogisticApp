@@ -11,8 +11,13 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -25,10 +30,19 @@ public class RegLogistico extends AppCompatActivity {
 
     private EditText nombre, contraseña, contraseña2, telefono, desc, correo, ubicacion, eNombre;
     private Switch terminos;
+    private FirebaseAuth mAuth;
+    public static final String NOM = "nombre";
+    public static final String CON = "contraseña";
+    public static final String TEL = "Telefono";
+    public static final String COR = "Correo";
+    public static final String ENC = "Encargado";
+    public static final String UBI = "Ubicacion";
+    public static final String DES = "Descripcion";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mAuth = FirebaseAuth.getInstance();
         setContentView(R.layout.reg_logistico);
         nombre = findViewById(R.id.nombre);
         contraseña = findViewById(R.id.password);
@@ -60,33 +74,45 @@ public class RegLogistico extends AppCompatActivity {
         }else if(!terminos.isChecked()){
             Toast.makeText(this, "Debe aceptar los terminos y condiciones para continuar", Toast.LENGTH_SHORT).show();
         }else {
+            mAuth.createUserWithEmailAndPassword(cor, con).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        // Sign in success, update UI with the signed-in user's information
+                        Map<String, Object> user = new HashMap<>();
+                        user.put("id",mAuth.getCurrentUser().toString());
+                        user.put("center", nom);
+                        user.put("phone", tel);
+                        user.put("email", cor);
+                        user.put("password", con);
+                        user.put("UPlantaPrincipal", ubi);
+                        user.put("cName", enc);
+                        user.put("desc", des);
+                        user.put("numActivos", 0);
 
-            Map<String, Object> user = new HashMap<>();
-            user.put("center", nom);
-            user.put("phone", tel);
-            user.put("email", cor);
-            user.put("password", con);
-            user.put("UPlantaPrincipal", ubi);
-            user.put("cName", enc);
-            user.put("desc", des);
-
-
-            db.collection("ULogistico")
-                .add(user)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Intent i = new Intent(view.getContext(), Login.class);
-                        startActivity(i);
+                        agregarAColeccion(user, view);
+                    } else {
+                        if (con.length() < 7) {
+                            Toast.makeText(view.getContext(), "La contraseña debe ser mas larga", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(view.getContext(), "No se pudo autenticar a el usuario", Toast.LENGTH_SHORT).show();
+                        }
                     }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(view.getContext(), "No se pudo registrar el usuario", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                }
+            });
+
+
         }
+    }
+
+    private void agregarAColeccion(Map<String, Object> oli, View view){
+        db.collection("ULogistico").add(oli).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            @Override
+            public void onSuccess(DocumentReference documentReference) {
+                Intent i = new Intent(view.getContext(), Activos.class);
+                startActivity(i);
+            }
+        });
     }
 
     private boolean validarEmail(String email) {

@@ -11,8 +11,13 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -25,10 +30,13 @@ public class RegUsuario extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private EditText nombre, contraseña, contraseña2, telefono, nEncargado, desc, correo;
     private Switch terminos;
+    private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.reg_usuario);
+        mAuth = FirebaseAuth.getInstance();
         nombre = findViewById(R.id.usuario);
         contraseña = findViewById(R.id.contraseña);
         contraseña2 = findViewById(R.id.contraseña2);
@@ -67,22 +75,43 @@ public class RegUsuario extends AppCompatActivity {
             user.put("desc", des);
 
             // Add a new document with a generated ID
-            db.collection("Usuarios")
-                .add(user)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Intent i = new Intent(view.getContext(), Login.class);
-                        startActivity(i);
+            mAuth.createUserWithEmailAndPassword(ema, con).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        // Sign in success, update UI with the signed-in user's information
+                        FirebaseUser usuario = mAuth.getCurrentUser();
+                        user.put("id", usuario.toString());
+                        agregarAColeccion(user, view);
+                    } else {
+                        if (con.length() < 7) {
+                            Toast.makeText(view.getContext(), "La contraseña debe ser mas larga", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(view.getContext(), "No se pudo autenticar a el usuario", Toast.LENGTH_SHORT).show();
+                        }
                     }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(view.getContext(), "No se pudo agregar el usuario", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                }
+            });
+
         }
+    }
+
+    private void agregarAColeccion(Map<String, Object> user, View view) {
+        db.collection("Usuarios")
+            .add(user)
+            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                @Override
+                public void onSuccess(DocumentReference documentReference) {
+                    Intent i = new Intent(view.getContext(), Login.class);
+                    startActivity(i);
+                }
+            })
+            .addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(view.getContext(), "No se pudo agregar el usuario", Toast.LENGTH_SHORT).show();
+                }
+            });
     }
 
     private boolean validarEmail(String email) {

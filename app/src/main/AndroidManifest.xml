@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LogisticApp">
         <activity
+            android:name=".OfertarActivo"
+            android:exported="false" />
+        <activity
+            android:name=".BuscarActivos"
+            android:exported="false" />
+        <activity
+            android:name=".Activos"
+            android:exported="false" />
+        <activity
             android:name=".tipo_oferta"
             android:exported="false" />
         <activity
@@ -28,16 +37,13 @@
             android:name=".Registro"
             android:exported="false" />
         <activity
-            android:name=".Login"
-            android:exported="false" />
-        <activity
             android:name=".RegLogistico"
             android:exported="false" />
         <activity
             android:name=".RegUsuario"
             android:exported="false" />
         <activity
-            android:name=".Inicio"
+            android:name=".Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
