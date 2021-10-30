@@ -13,6 +13,12 @@
             android:name=".ConfirmarActivo"
             android:exported="false" />
         <activity
+            android:name=".plantilla_general"
+            android:exported="false" />
+        <activity
+            android:name=".ultimas_ofertas"
+            android:exported="false" />
+        <activity
             android:name=".OfertarActivo"
             android:exported="false" />
         <activity
@@ -55,5 +61,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

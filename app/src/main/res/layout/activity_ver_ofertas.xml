@@ -4,7 +4,148 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondoinicio"
     tools:context=".VerOfertas">
 
 
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="177dp"
+        android:layout_height="36dp"
+        android:text="Titulo específico Epaa"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="117dp"
+        tools:layout_editor_absoluteY="43dp" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="153dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#016A87"
+        android:text="Cerrar sesión"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="152dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginBottom="92dp"
+        android:backgroundTint="#016A87"
+        android:text="Contactarse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:layout_width="384dp"
+        android:layout_height="482dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="11dp"
+        tools:layout_editor_absoluteY="103dp">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="372dp"
+            android:layout_height="31dp"
+            android:text="Transporte y logistica SAS"
+            android:textColor="#403C3C"
+            android:textSize="16" />
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:text="Transporte en carreteras 10 de 10"
+            android:textColor="#403C3C"
+            android:textSize="16"
+            tools:layout_editor_absoluteX="18dp"
+            tools:layout_editor_absoluteY="156dp" />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:text="Bogotá (calle 100 cra. 54-67)"
+            android:textColor="#403C3C"
+            android:textSize="16"
+            tools:layout_editor_absoluteX="18dp"
+            tools:layout_editor_absoluteY="156dp" />
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:text="Carta de alimentos por cadena fria"
+            android:textColor="#403C3C"
+            android:textSize="16"
+            tools:layout_editor_absoluteX="18dp"
+            tools:layout_editor_absoluteY="156dp" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:text="BACS"
+            android:textColor="#403C3C"
+            android:textSize="16" />
+
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:text="INVIMA"
+            android:textColor="#403C3C"
+            android:textSize="16" />
+
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:text="Camion de dos ejes"
+            android:textColor="#403C3C"
+            android:textSize="16" />
+
+        <TextView
+            android:id="@+id/textView33"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:text="C2 Turbo"
+            android:textColor="#403C3C"
+            android:textSize="16" />
+
+        <TextView
+            android:id="@+id/textView34"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:text="4.5 ton"
+            android:textColor="#403C3C"
+            android:textSize="16" />
+
+        <TextView
+            android:id="@+id/textView35"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:text="21.3 mts"
+            android:textColor="#403C3C"
+            android:textSize="16" />
+
+        <TextView
+            android:id="@+id/textView37"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:text="Medidas 13lx23a"
+            android:textColor="#403C3C"
+            android:textSize="16" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
